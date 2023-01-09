@@ -1,0 +1,25 @@
+{
+  "name": "majestic-api",
+  "version": "1.0.0",
+  "description": "Self project Api ",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zer0Power/Majestic-Api.git"
+  },
+  "author": "Savage 0P",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zer0Power/Majestic-Api/issues"
+  },
+  "homepage": "https://github.com/Zer0Power/Majestic-Api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
