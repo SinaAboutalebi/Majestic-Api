@@ -24,7 +24,7 @@ app.use(cors({ methods: ['GET', 'POST'] }));
 app.use(morgan("common"))
 app.use(router)
 app.use("*", (req, res) => {
-    res.status(401).send({ error: 'Unauthorized' });
+    res.status(401).send({ status: 401, error: 'Unauthorized', message:"client failed to authenticate with the server" });
 });
 
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
