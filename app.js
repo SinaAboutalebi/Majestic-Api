@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const express = require("express");
 const dotenv = require("dotenv").config();
 
+const router = require('./router');
 
 const app = express();
 
@@ -21,6 +22,7 @@ blue = "\x1b[34m";
 
 app.use(cors({ methods: ['GET', 'POST'] }));
 app.use(morgan("common"))
+app.use(router)
 app.use("*", (req, res) => {
     res.status(401).send({ error: 'Unauthorized' });
 });
