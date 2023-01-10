@@ -21,7 +21,7 @@ blue = "\x1b[34m";
 //MiddleWares 
 
 app.use(cors({ methods: ['GET', 'POST'] }));
-//app.use(morgan("common"))
+app.use(morgan("common"))
 app.use(router)
 app.use("*", (req, res) => {
     res.status(401).send({ status: 401, error: 'Unauthorized', message:"client failed to authenticate with the server" });
