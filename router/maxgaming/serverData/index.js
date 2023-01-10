@@ -7,8 +7,8 @@ const router = express.Router();
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
 //Set Routes
 
-// const serverRouter = require('./serversRouter'); //all servers Data Route
-// router.use('/servers', serverRouter)
+const serverRouter = require('./routers/serversRouter'); //all servers Data Route
+router.use('/servers', serverRouter)
 
 const countsRouter = require('./routers/countsRouter'); //servers Count Route
 router.use('/counts', countsRouter)
