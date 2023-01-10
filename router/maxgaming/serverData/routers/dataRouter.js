@@ -4,7 +4,7 @@
 const express = require("express");
 const router = express.Router();
 
-const getServerData = require('./src/getServerData');
+const getServerData = require('../src/getServerData');
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
 //Router 
 

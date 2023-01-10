@@ -13,10 +13,10 @@ const router = express.Router();
 // const countsRouter = require('./countsRouter'); //servers Count Route
 // router.use('/counts', countsRouter)
 
-// const portsRouter = require('./portsRouter'); //server ports Route 
-// router.use('/ports', portsRouter)
+const portsRouter = require('./routers/portsRouter'); //server ports Route 
+router.use('/ports', portsRouter)
 
-const dataRouter = require('./dataRouter'); //get Data By ip 
+const dataRouter = require('./routers/dataRouter'); //get Data By ip 
 router.use('/getData', dataRouter)
 
 module.exports = router;
