@@ -10,8 +10,8 @@ const router = express.Router();
 // const serverRouter = require('./serversRouter'); //all servers Data Route
 // router.use('/servers', serverRouter)
 
-// const countsRouter = require('./countsRouter'); //servers Count Route
-// router.use('/counts', countsRouter)
+const countsRouter = require('./routers/countsRouter'); //servers Count Route
+router.use('/counts', countsRouter)
 
 const portsRouter = require('./routers/portsRouter'); //server ports Route 
 router.use('/ports', portsRouter)
