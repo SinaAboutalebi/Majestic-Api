@@ -10,5 +10,8 @@ const router = express.Router();
 const serverData = require('./serverData'); //Server Data Router 
 router.use('/serverData', serverData)
 
+const faceitRouter = require('./faceit'); //Faceit API Router
+router.use('/faceit', faceitRouter)
+
 module.exports = router;
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
