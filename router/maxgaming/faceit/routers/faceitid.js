@@ -13,15 +13,23 @@ router.get('/', async (req, res) => {
 
     gameplayerid = req.query.id
 
-    try {
+    if (gameplayerid.length == 17) {
 
-        const data = await getData.getByID(gameplayerid)
-        if (data) res.status(200).send({ status: 200, faceitID: data.player_id })
+        try {
 
-    } catch (error) {
+            const data = await getData.getByID(gameplayerid)
+            if (data) res.status(200).send({ status: 200, faceitID: data.player_id })
 
-        return res.status(408).json({ status: 408, error: error, message: "api is currently down" });
+        } catch (error) {
+
+            return res.status(408).json({ status: 408, error: error, message: "api is currently down" });
+        }
+
+    } else {
+        return res.status(400).json({ status: 400, error: "Bad Request", message: "invalid query" });
     }
+
+
 })
 
 
