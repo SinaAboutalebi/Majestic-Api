@@ -6,11 +6,8 @@ const time = require('node-get-time');
 const util = require('util');
 const path = require('path')
 
-
-
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
 //Logger Function
-
 
 let date = new Date()
 let formatedDate = date.toISOString().split('T')[0]
