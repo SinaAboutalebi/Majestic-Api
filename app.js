@@ -6,6 +6,7 @@ const path = require('path');
 const cors = require("cors");
 const morgan = require('morgan');
 const express = require("express");
+const bodyParser = require("body-parser");
 const dotenv = require("dotenv").config();
 
 const router = require('./router');
@@ -24,12 +25,14 @@ blue = "\x1b[34m";
 
 let date = new Date()
 let formatedDate = date.toISOString().split('T')[0]
-var accessLogStream = fs.createWriteStream(path.join(__dirname, 'logs', `${formatedDate}-access.log`), { flags: 'a', interval: '1d' })
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'logs', 'access', `${formatedDate}-access.log`), { flags: 'a', interval: '1d' })
 
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
 //MiddleWares 
 
 app.use(cors({ methods: ['GET', 'POST'] }));
+app.use(bodyParser.json()); //Parse JSON bodies
+app.use(bodyParser.urlencoded({extended: true})); //Parse URL-encoded bodies
 app.use(morgan("common")) //Console Logger 
 app.use(morgan("common", { stream: accessLogStream })) //Access File Log
 app.use(router)
@@ -48,3 +51,6 @@ app.listen(process.env.PORT, async () => {
     console.log(cyan, " [⚙️]Port : ",
         process.env.PORT);
 });
+
+//---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
+

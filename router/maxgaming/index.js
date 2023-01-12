@@ -13,5 +13,8 @@ router.use('/serverData', serverData)
 const faceitRouter = require('./faceit'); //Faceit API Router
 router.use('/faceit', faceitRouter)
 
+const rconRouter = require('./rcon'); //Rcon API Router
+router.use('/rcon', rconRouter);
+
 module.exports = router;
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
