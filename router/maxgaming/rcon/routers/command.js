@@ -11,8 +11,6 @@ const logger = require('../src/logger');
 //Routes
 
 router.post("/", async (req, res) => {
-    console.log(req.headers.authorization);
-    console.log(process.env.AUTH_TOKEN);
 
     if (req.headers.authorization != process.env.AUTH_TOKEN) {
         return res.status(401).send({
