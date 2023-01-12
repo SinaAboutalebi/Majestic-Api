@@ -1,5 +1,5 @@
 ## Faceit Api
-/faceit/player?id=
+/maxgaming/faceit/player?id=
 
 /maxgaming/faceit/hub?id=
 
