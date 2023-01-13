@@ -60,7 +60,7 @@ router.post("/", async (req, res) => {
 
                 }).on('response', async function (str) {
                     if (str.length > 1) {
-                        logger(`[${server.ip}:${server.port}](${req.body.user} - ${command})::${str}`)
+                        logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${str}`)
                         embed.response(str, req.body.channelid, server)
                         return res.status(200).send({
                             status: 200,
@@ -73,7 +73,7 @@ router.post("/", async (req, res) => {
                     }
 
                 }).on('error', async function (err) {
-                    logger(`[${server.ip}:${server.port}](${req.body.user} - ${command})::${err}`)
+                    logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${err}`)
                     embed.error(err, req.body.channelid, server)
                     return res.status(500).send({
                         status: 500,
@@ -87,7 +87,7 @@ router.post("/", async (req, res) => {
                 })
 
             } catch (error) {
-                logger(`[${server.ip}:${server.port}](${req.body.user} - ${command})::${error}`)
+                logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${error}`)
                 embed.error(err, req.body.channelid, server)
                 return res.status(500).send({
                     status: 500,
