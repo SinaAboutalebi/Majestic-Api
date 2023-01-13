@@ -51,6 +51,7 @@ router.post("/", async (req, res) => {
 
                 }).on('response', async function (str) {
                     if (str.length > 1) {
+                        logger(`[${req.body.sv}:${req.body.port}](${command})::${str}`)
                         return res.status(200).send({
                             status: 200,
                             server: req.body.sv,
@@ -61,6 +62,7 @@ router.post("/", async (req, res) => {
                     }
 
                 }).on('error', async function (err) {
+                    logger(`[${req.body.sv}:${req.body.port}](${command})::${err}`)
                     return res.status(500).send({
                         status: 500,
                         error: "a generic error occurred on the server",
@@ -72,6 +74,7 @@ router.post("/", async (req, res) => {
                 })
 
             } catch (error) {
+                logger(`[${req.body.sv}:${req.body.port}](${command})::${error}`)
                 return res.status(500).send({
                     status: 500,
                     error: "a generic error occurred on the server",
