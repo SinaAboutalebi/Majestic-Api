@@ -10,5 +10,8 @@ const router = express.Router();
 const commandRouter = require('./routers/command'); //Execute Rcon Commands via API
 router.use('/command', commandRouter)
 
+const mgcommandRouter = require('./routers/mgCommand'); //Execute Maxgaming Rcon Commands via API
+router.use('/mgcommand', mgcommandRouter)
+
 module.exports = router;
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
