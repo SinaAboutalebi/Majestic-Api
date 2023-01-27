@@ -1,1 +1,2 @@
 # Majestic-Api
+coming soon
