@@ -41,12 +41,13 @@ router.post("/", async (req, res) => {
                 })
                 connection.connect()
 
-                connection.on("auth", async () => {
+                if (!req.body.cmd.startsWith("sm_")) {
+                    command = req.body.cmd.replace(/sm /g, 'sm_')
+                }
+                else { command = req.body.cmd }
 
-                    if (!req.body.cmd.startsWith("sm_")) {
-                        command = req.body.cmd.replace(/sm /g, 'sm_')
-                    }
-                    else { command = req.body.cmd }
+                connection.on("auth", async () => {
+                    
                     connection.send(command)
 
                 }).on('response', async function (str) {
