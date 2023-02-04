@@ -1,3 +1,5 @@
+# Maxgaming EndPoints
+
 ## Faceit Api
 /maxgaming/faceit/player?id=
 
@@ -19,3 +21,9 @@
 /maxgaming/rcon/command
 
 /maxgaming/rcon/mgCommand
+
+# Embed EndPoints
+
+## Embed Api
+
+/embed/send
