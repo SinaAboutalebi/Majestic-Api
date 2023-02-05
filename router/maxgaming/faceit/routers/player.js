@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
         try {
             const data = await getData.getByID(gameplayerid)
-            if (data) res.status(200).send({ data })
+            if (data) res.status(200).send({ status: 200, data })
 
         } catch (error) {
 

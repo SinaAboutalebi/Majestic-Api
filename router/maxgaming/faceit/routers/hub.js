@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
             const hubs = await getData.getHubs(playerData.player_id)
 
             if (hubs.length < 1) return res.status(200).send({ status: 200, message: "this player donsen't joined any hub" })
-            else return res.status(200).send({ hubs })
+            else return res.status(200).send({ status: 200, hubs })
 
 
         } catch (error) {
