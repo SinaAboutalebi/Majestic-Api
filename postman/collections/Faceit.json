@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "09a84540-3a2f-4c24-87b8-2e95e6fe7b01",
+		"name": "Faceit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25181903-09a84540-3a2f-4c24-87b8-2e95e6fe7b01"
+	},
+	"item": [
+		{
+			"name": "Player Data",
+			"id": "c024bb36-05ab-4b21-81e9-9fe375642e22",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/faceit/player?id=76561198888359740",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"faceit",
+						"player"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "76561198888359740"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hub Data",
+			"id": "bfec9d33-33aa-48d1-831a-1ea40212073c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/faceit/hub?id=76561198888359740",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"faceit",
+						"hub"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "76561198888359740"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Faceit ID",
+			"id": "03c19a08-c16b-4acb-8e4e-ab72e3637295",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/faceit/faceitid?id=76561198888359740",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"faceit",
+						"faceitid"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "76561198888359740"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
