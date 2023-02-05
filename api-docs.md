@@ -120,3 +120,41 @@ Response:
     "faceitID": "df24694e-12bf-4725-8b43-e1ed2f4a0d94"
 }
 ```
+
+## Server Data
+
+### servers
+
+Request:
+
+```JS
+Method = GET
+Path = /maxgaming/serverdata/servers
+```
+
+Response:
+
+```JSON
+{
+    "totalServers": 58,
+    "vps1Onlines": 29,
+    "vps2Onlines": 29,
+    "totalPlayers": 92,
+    "vps1Players": 46,
+    "vps2Players": 46,
+    "vps1Servers": [
+        {
+            "port": 29389,
+            "name": "BARCODE Public Server",
+            "players": 0
+        }
+    ],
+    "vps2Servers": [
+        {
+            "port": 29674,
+            "name": "Pilakoot MixMatch+ |Warmup: Retakes|",
+            "players": 0
+        }
+    ]
+}
+```
