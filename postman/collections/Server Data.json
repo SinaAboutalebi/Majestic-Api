@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "568ff18e-d3f0-49fd-aa0a-8e2e1a7a9724",
+		"name": "Server Data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25181903-568ff18e-d3f0-49fd-aa0a-8e2e1a7a9724"
+	},
+	"item": [
+		{
+			"name": "Data Counts",
+			"id": "de284ce3-c53b-4755-abea-27cb6fc76da1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/serverdata/counts",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"serverdata",
+						"counts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Server Ports",
+			"id": "558e884e-2455-4456-846d-96b273fb29d4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/serverdata/ports",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"serverdata",
+						"ports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All serversData",
+			"id": "3293d375-1746-4e0c-86b9-ef0d05d27013",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/serverdata/servers",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"serverdata",
+						"servers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data by ip & port",
+			"id": "ce1d9dd6-ed11-4afd-8f87-48cce9f001f6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/serverdata/getData?ip=85.114.146.38&port=27019",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"serverdata",
+						"getData"
+					],
+					"query": [
+						{
+							"key": "ip",
+							"value": "85.114.146.38"
+						},
+						{
+							"key": "port",
+							"value": "27019"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "dde15590-63f9-4dc7-89c6-aa2ea94fb629",
+		"name": "Embed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25181903-dde15590-63f9-4dc7-89c6-aa2ea94fb629"
+	},
+	"item": [
+		{
+			"name": "send Embed",
+			"id": "154c871b-96f1-49b5-9ffc-af3f38d066b2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"tkn\":\"MTA0MjEyODQ4MDcwOTY0MDMyMw.GmzXzD.Olaj7nZ9pWSKm5p_UXKYqb7g44jYaM-7Q74Jy4\",\"channelid\":\"985960571428028416\", \"title\":\"dick\",\"url\":\"http://0powerdev.ir\",\"description\":\"test\",\"thumbnail\":\"https://cdn.discordapp.com/attachments/985960571428028416/1042155910367285299/360_F_250195930_tnw6UtbNOnGeBOX3OriqImfknthDJgc2.jpg\",\"image\":\"https://cdn.discordapp.com/attachments/985960571428028416/1042155910115643432/360_F_117351782_ugRMzKUg8pz8ucKVqIPI1JzQSCItC0Hx.jpg\",\"footer\":\"ss\",\"footerUrl\":\"https://cdn.discordapp.com/attachments/985960571428028416/1042155910115643432/360_F_117351782_ugRMzKUg8pz8ucKVqIPI1JzQSCItC0Hx.jpg\",\"color\":\"#000\",\"role\":\"@everyone\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "api.0powerdev.ir/embed/send",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"embed",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

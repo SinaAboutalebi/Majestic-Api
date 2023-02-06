@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "eafdd97f-dde6-4e11-b364-e3dcfe335b26",
+		"name": "rcon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25181903-eafdd97f-dde6-4e11-b364-e3dcfe335b26"
+	},
+	"item": [
+		{
+			"name": "Rcon Command",
+			"id": "e1d8d178-28a7-48b5-856e-ebcc3fe8929d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sv\":\"185.141.133.16\", \"cmd\":\"sm_admin_list\", \"port\":\"27015\",\"pass\":\"myjoojoo123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/rcon/command",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"rcon",
+						"command"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MgCommand",
+			"id": "78543be4-3dad-4ecf-8ee0-94f20f43c1c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "authorization",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"channelid\":\"947773356650942464\", \"cmd\":\"sm_admin_list\", \"user\":\"mamad\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "api.0powerdev.ir/maxgaming/rcon/mgcommand",
+					"host": [
+						"api",
+						"0powerdev",
+						"ir"
+					],
+					"path": [
+						"maxgaming",
+						"rcon",
+						"mgcommand"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "123456",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "aut",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2007383e-4048-4e9e-8e91-6a86e4d5c0b5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0fd070d7-18c1-46d1-9d8c-ea174776bb6c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
