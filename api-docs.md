@@ -123,7 +123,7 @@ Response:
 
 ## Server Data
 
-### servers
+### servers router
 
 Request:
 
@@ -156,5 +156,96 @@ Response:
             "players": 0
         }
     ]
+}
+```
+
+### ports router
+
+Request:
+
+```JS
+Method = GET
+Path = /maxgaming/serverdata/ports
+```
+
+Response:
+
+```JSON
+{
+    "vps1Ports": [
+        29760,
+        27015,
+        29786,
+        29775,
+        29756,
+        29210,
+        27019
+    ],
+    "vps2Ports": [
+        29395,
+        28235,
+        27018,
+        29674,
+        29613,
+        27020,
+        29696
+    ]
+}
+```
+
+### counts route
+
+Request:
+
+```JS
+Method = GET
+Path = /maxgaming/serverdata/counts
+```
+
+Response:
+
+```JSON
+{
+    "totalServers": 59,
+    "vps1Onlines": 30,
+    "vps2Onlines": 29,
+    "totalPlayers": 147,
+    "vps1Players": 83,
+    "vps2Players": 64
+}
+```
+
+### getData routes
+
+Request :
+
+```JS
+Method = GET
+Path = /maxgaming/serverdata/getData?ip=85.114.146.38&port=27015
+PARAMS = ip => GameServer IP , port => GameServer Port
+```
+
+Response:
+
+```JSON
+{
+    "addr": "85.114.146.38:27015",
+    "gameport": 27015,
+    "specport": 27016,
+    "steamid": "85568392922521934",
+    "name": "FACEIT.com register to play here",
+    "appid": 730,
+    "gamedir": "csgo",
+    "version": "1.38.5.2",
+    "product": "csgo",
+    "region": 255,
+    "players": 10,
+    "max_players": 16,
+    "bots": 1,
+    "map": "de_mirage",
+    "secure": true,
+    "dedicated": true,
+    "os": "l",
+    "gametype": "secure"
 }
 ```
