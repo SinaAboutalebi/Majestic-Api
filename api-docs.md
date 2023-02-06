@@ -250,6 +250,41 @@ Response:
 }
 ```
 
+## Rcon
+
+### command
+
+Request :
+
+```JS
+METHOD = POST
+Path = /maxgaming/rcon/command
+Header = authorization <API TOKEN>
+```
+
+Request Body :
+
+```JSON
+{
+    "sv":"185.141.133.16",
+    "cmd":"sm_admin_list",
+    "port":"27015",
+    "pass":"WhyImSoGOOD@GoodVibes"
+}
+```
+
+Response :
+
+```JSON
+{
+    "status": 200,
+    "server": "185.141.133.16",
+    "port": "27015",
+    "cmd": "sm_admin_list",
+    "response": "\"a\"\n\"Atlas\" \"Staff\" \"1317408\" \"a\"\n\"donjw\" \"Lord\" \"1317420\" \"a\"\n\"spawn\" \"Major\" \"1317432\" \"a\"\n\"Medusa\" \"Intern\" \"1317444\" \"a\"\n\"ali\" \"Colonel\" \"1317456\" \"a\"\n\"lunixius\" \"Intern\" \"1317464\" \"a\"\n\"vine\" \"Intern\" \"1317476\" \"a\"\n\"junior\" \"Lord\" \"1317484\" \"a\""
+}
+```
+
 # Embed EndPoints
 
 ## send route
