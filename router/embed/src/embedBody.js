@@ -44,6 +44,10 @@ module.exports = async (body) => {
         embed.color = parseInt(body.color.split("#")[1], 16);
     }
 
+    if(!body.role) {
+        body.role = "none"
+    }
+
     return embed;
 
 }
