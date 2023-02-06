@@ -249,3 +249,41 @@ Response:
     "gametype": "secure"
 }
 ```
+
+# Embed EndPoints
+
+## send route
+
+Request :
+
+```JS
+Method = POST
+Path = /embed/send
+```
+
+Request Body :
+
+```JSON
+{
+    "tkn": "Discord Bot Token", //String : MTAKSHvkfjlfdb4MDcwOTY0MDMyMw.GmzXzD.OlajdhjkgfsSKm5p_UXK645dfs144jYaM-7Q74Jy4
+    "channelid": "Discord ChannelID", //Numeric : 985960571428028416
+    "title": "Title", //String : test
+    "url": "Url", //String (Must Have https or http) : http://0powerdev.ir
+    "description": "Description", //String : Jack Is A Good Dog :D
+    "thumbnail": "Thumbnail Image Link", //String (Must Have https or http) : https://cdn.discordapp.com/attachments/985960571428028416/1042155910367285299/360_F_250195930_tnw6UtbNOnGeBOX3OriqImfknthDJgc2.jpg
+    "image": "Image Link", //String (Must Have https or http) : https://cdn.discordapp.com/attachments/985960571428028416/1042155910115643432/360_F_117351782_ugRMzKUg8pz8ucKVqIPI1JzQSCItC0Hx.jpg
+    "footer": "Footer", //String : 0Power
+    "footerUrl": "Footer Url", //String (Footer Profile)(Must Have https or http) : https://cdn.discordapp.com/attachments/985960571428028416/1042155910115643432/360_F_117351782_ugRMzKUg8pz8ucKVqIPI1JzQSCItC0Hx.jpg
+    "color": "Color Code With #", //Hex : #000
+    "role": "Role" //String : none , everyone , here , 798517489750507570
+}
+```
+
+Response :
+
+```JSON
+{
+    "status": 200,
+    "message": "server sent the embed request as expected"
+}
+```
