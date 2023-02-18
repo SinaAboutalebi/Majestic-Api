@@ -41,6 +41,12 @@ router.post("/", async (req, res) => {
                     message: server.error
                 })
             }
+
+            if (!req.body.cmd.startsWith("sm_")) {
+                command = req.body.cmd.replace(/sm /g, 'sm_')
+            }
+            else { command = req.body.cmd }
+
             //Try To Connect Server Rcon ===========================================//
             try {
 
@@ -49,19 +55,16 @@ router.post("/", async (req, res) => {
                     "challenge": false
                 })
                 connection.connect()
+                connection.send(command)
 
                 connection.on("auth", async () => {
 
-                    if (!req.body.cmd.startsWith("sm_")) {
-                        command = req.body.cmd.replace(/sm /g, 'sm_')
-                    }
-                    else { command = req.body.cmd }
-                    connection.send(command)
 
                 }).on('response', async function (str) {
                     if (str.length > 1) {
                         logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${str}`)
                         embed.response(str, req.body.channelid, server)
+                        embed.logs(req.body.user, command, server, str)
                         return res.status(200).send({
                             status: 200,
                             label: server.label,
@@ -75,6 +78,8 @@ router.post("/", async (req, res) => {
                 }).on('error', async function (err) {
                     logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${err}`)
                     embed.error(err, req.body.channelid, server)
+                    embed.logs(req.body.user, command, server, err)
+
                     return res.status(500).send({
                         status: 500,
                         error: "a generic error occurred on the server",
@@ -89,6 +94,8 @@ router.post("/", async (req, res) => {
             } catch (error) {
                 logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${error}`)
                 embed.error(err, req.body.channelid, server)
+                embed.logs(req.body.user, command, server, err)
+
                 return res.status(500).send({
                     status: 500,
                     error: "a generic error occurred on the server",
