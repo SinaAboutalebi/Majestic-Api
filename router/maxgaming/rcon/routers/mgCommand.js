@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
 
     else {
         //Check Request Body Params=================================================//
-        if (!req.body.sv || !req.body.port || !req.body.cmd || !req.body.pass || !req.body.channelid ) {
+        if (!req.body.sv || !req.body.port || !req.body.cmd || !req.body.pass || !req.body.channelid) {
 
             return res.status(400).json({
                 status: 400,
