@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
 
     else {
         //Check Request Body Params=================================================//
-        if (!req.body.channelid || !req.body.cmd) {
+        if (!req.body.sv || !req.body.port || !req.body.cmd || !req.body.pass || !req.body.channelid) {
 
             return res.status(400).json({
                 status: 400,
@@ -42,36 +42,37 @@ router.post("/", async (req, res) => {
                 })
             }
 
-            if (!req.body.cmd.startsWith("sm_")) {
-                command = req.body.cmd.replace(/sm /g, 'sm_')
-            }
-            else { command = req.body.cmd }
-
             //Try To Connect Server Rcon ===========================================//
             try {
 
-                connection = new rcon(server.ip, server.port, process.env.RCON_PASSWORD, {
+                connection = new rcon(req.body.sv, req.body.port, req.body.pass, {
                     "tcp": true,
                     "challenge": false
                 })
                 connection.connect()
-                connection.send(command)
+
+                if (!req.body.cmd.startsWith("sm_")) {
+                    command = req.body.cmd.replace(/sm /g, 'sm_')
+                }
+                else { command = req.body.cmd }
 
                 connection.on("auth", async () => {
+                    
+                    connection.send(command)
 
 
                 }).on('response', async function (str) {
                     if (str.length > 1) {
-                        logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${str}`)
+                        logger(`[${server.label} - ${server.ip}:${server.port}](${req.body.user} - ${command})::${str.toString()}`)
                         embed.response(str, req.body.channelid, server)
-                        embed.logs(req.body.user, command, server, str)
+                        embed.logs(req.body.user, command, server, str.toString())
                         return res.status(200).send({
                             status: 200,
                             label: server.label,
                             server: server.ip,
                             port: server.port,
                             cmd: req.body.cmd,
-                            response: str
+                            response: str.toString()
                         })
                     }
 
