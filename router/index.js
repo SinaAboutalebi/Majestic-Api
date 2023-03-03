@@ -13,5 +13,8 @@ router.use('/maxgaming', maxgamingRoutes);
 const embedRoutes = require('./embed');
 router.use('/embed', embedRoutes);
 
+const ipRoutes = require('./ip');
+router.use('/ip', ipRoutes);
+
 module.exports = router;
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
