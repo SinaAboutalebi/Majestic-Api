@@ -47,3 +47,6 @@ router.get("/", async (req, res) => {
         }
     }
 })
+
+module.exports = router;
+//---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
