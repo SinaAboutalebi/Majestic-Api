@@ -22,6 +22,9 @@
 
 /maxgaming/rcon/mgCommand
 
+## SteamID Api
+
+/maxgaming/steamid/profile
 # Embed EndPoints
 
 ## Embed Api
