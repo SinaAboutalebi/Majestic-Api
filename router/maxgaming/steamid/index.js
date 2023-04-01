@@ -10,4 +10,6 @@ const router = express.Router();
 const profileRouter = require('./routers/profileRouter'); //Profile Data Route
 router.use('/profile', profileRouter)
 
+
+module.exports = router;
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
