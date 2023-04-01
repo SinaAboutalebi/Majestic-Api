@@ -16,5 +16,8 @@ router.use('/faceit', faceitRouter)
 const rconRouter = require('./rcon'); //Rcon API Router
 router.use('/rcon', rconRouter);
 
+const steamidRouter = require('./steamid'); //SteamID API Router
+router.use('/steamid', steamidRouter);
+
 module.exports = router;
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
