@@ -18,8 +18,11 @@ router.get("/", async (req, res) => {
     if (!url && !id) { //Check Query Params
         return res.status(400).json({ status: 400, error: "Bad Request", message: "invalid query" });
     }
+    if (url && id) { //Check Query Params
+        return res.status(400).json({ status: 400, error: "Bad Request", message: "too many queries" });
+    }
     else {
-        if (url) {
+        if (!id && url) {
             if (url.includes("steamcommunity.com/id")) { //Basic Url Validator 
                 steamidResolver.customUrlToFullInfo(url.toString(), async function (err, result) { //Get Profile Data By CustomUrl
 
@@ -70,7 +73,7 @@ router.get("/", async (req, res) => {
             }
             else { return res.status(404).json({ status: 404, error: "Not Found", message: "the requested profile not found" }); }
         }
-        if (id) {
+        else if (!url && id) {
             steamidResolver.steamID64ToFullInfo(id, async function (err, result) { //Get Profile Data By Steam64ID
 
                 if (err) return res.status(500).json({ status: 500, error: "Internal Server Error", message: err });
@@ -93,7 +96,7 @@ router.get("/", async (req, res) => {
 
                 })
             })
-        }
+        }    
     }
 })
 
