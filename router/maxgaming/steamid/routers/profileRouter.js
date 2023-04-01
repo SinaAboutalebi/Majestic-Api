@@ -23,26 +23,31 @@ router.get("/", async (req, res) => {
             if (url.includes("steamcommunity.com") && url.includes("steamcommunity.com/id")) { //Basic Url Validator
                 steamidResolver.customUrlToFullInfo(url, async function (err, result) {
 
-                    if (err) return res.status(500).json({ status: 500, error: "Internal Server Error", message: "a generic error occurred on the server" });
+                    if (err) return res.status(500).json({ status: 500, error: "Internal Server Error", message: err });
                     if (!result) return res.status(404).json({ status: 404, error: "Not Found", message: "the requested profile not found" });
+
 
                     let sid = new SteamIDpack(result.steamID64.toString()); //SteamID Pack
 
                     return res.status(200).json({ //Return Profile Data
                         status: 200,
-                        nickname: result.steamID,
-                        avatarUrl: result.avatarFull,
-                        memberSince: result.memberSince,
-                        onlineState: result.onlineState,
-                        privacyState: result.privacyState,
+                        nickname: result.steamID.toString(),
+                        avatarUrl: result.avatarFull.toString(),
+                        memberSince: result.memberSince.toString(),
+                        onlineState: result.onlineState.toString(),
+                        privacyState: result.privacyState.toString(),
                         fullUrl: `https://steamcommunity.com/profiles/${result.steamID64}`,
-                        steam64id: result.steamID64,
+                        steam64id: result.steamID64.toString(),
                         steam2id: sid.getSteam2RenderedID(true),
                         steam3id: sid.getSteam3RenderedID()
 
 
                     })
                 })
+            }
+            else {
+                return res.status(404).json({ status: 404, error: "Not Found", message: "the requested profile not found" });
+
             }
         }
     }
