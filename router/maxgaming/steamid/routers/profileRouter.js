@@ -28,8 +28,20 @@ router.get("/", async (req, res) => {
 
                     let sid = new SteamIDpack(result.steamID64.toString()); //SteamID Pack
 
-                    return 
+                    return res.status(200).json({ //Return Profile Data
+                        status: 200,
+                        nickname: result.steamID,
+                        avatarUrl: result.avatarFull,
+                        memberSince: result.memberSince,
+                        onlineState: result.onlineState,
+                        privacyState: result.privacyState,
+                        fullUrl: `https://steamcommunity.com/profiles/${result.steamID64}`,
+                        steam64id: result.steamID64,
+                        steam2id: sid.getSteam2RenderedID(true),
+                        steam3id: sid.getSteam3RenderedID()
 
+
+                    })
                 })
             }
         }
