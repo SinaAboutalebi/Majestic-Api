@@ -20,8 +20,8 @@ router.get("/", async (req, res) => {
     }
     else {
         if (url) {
-            if (url.includes("steamcommunity.com/id")) { //Basic Url Validator
-                steamidResolver.customUrlToFullInfo(url.toString(), async function (err, result) {
+            if (url.includes("steamcommunity.com/id")) { //Basic Url Validator 
+                steamidResolver.customUrlToFullInfo(url.toString(), async function (err, result) { //Get Profile Data By CustomUrl
 
                     if (err) return res.status(500).json({ status: 500, error: "Internal Server Error", message: err });
                     if (!result) return res.status(404).json({ status: 404, error: "Not Found", message: "the requested profile not found" });
@@ -44,8 +44,8 @@ router.get("/", async (req, res) => {
                     })
                 })
             }
-            else if (url.includes("steamcommunity.com/profiles")) {
-                steamidResolver.steamID64ToFullInfo(url, async function (err, result) {
+            else if (url.includes("steamcommunity.com/profiles")) { //Basic Url Validator
+                steamidResolver.steamID64ToFullInfo(url, async function (err, result) { //Get Profile Data By Steam64ID
 
                     if (err) return res.status(500).json({ status: 500, error: "Internal Server Error", message: err });
                     if (!result) return res.status(404).json({ status: 404, error: "Not Found", message: "the requested profile not found" });
