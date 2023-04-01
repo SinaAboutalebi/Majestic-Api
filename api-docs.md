@@ -285,6 +285,60 @@ Response :
 }
 ```
 
+## Steamid
+
+### profile By Costum Url
+
+Request :
+
+```JS
+Method = GET
+Path = /maxgaming/steamid/profile?url=https://steamcommunity.com/id/Zer0_Power
+PARAMS = url => Profile Url
+```
+
+Response:
+
+```JSON
+{
+    "status": 200,
+    "nickname": "'Zer0Power",
+    "avatarUrl": "https://avatars.cloudflare.steamstatic.com/4c21d8b23cb08c9d9c12c28a769268d40344fab9_full.jpg",
+    "memberSince": "January 17, 2019",
+    "onlineState": "offline",
+    "privacyState": "public",
+    "fullUrl": "https://steamcommunity.com/profiles/76561198888359740",
+    "steam64id": "76561198888359740",
+    "steam2id": "STEAM_1:0:464047006",
+    "steam3id": "[U:1:928094012]"
+}
+```
+### profile By steam64ID
+
+Request :
+
+```JS
+Method = GET
+Path = /maxgaming/steamid/profile?id=76561198888359740
+PARAMS = id => Steam64ID
+```
+
+Response:
+
+```JSON
+{
+    "status": 200,
+    "nickname": "'Zer0Power",
+    "avatarUrl": "https://avatars.cloudflare.steamstatic.com/4c21d8b23cb08c9d9c12c28a769268d40344fab9_full.jpg",
+    "memberSince": "January 17, 2019",
+    "onlineState": "offline",
+    "privacyState": "public",
+    "fullUrl": "https://steamcommunity.com/profiles/76561198888359740",
+    "steam64id": "76561198888359740",
+    "steam2id": "STEAM_1:0:464047006",
+    "steam3id": "[U:1:928094012]"
+}
+```
 # Embed EndPoints
 
 ## send route
